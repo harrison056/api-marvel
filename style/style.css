@@ -1,0 +1,93 @@
+#herois img {
+    width: 300px;
+    border-bottom-style: solid;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    cursor: pointer;
+}
+.personagem {
+    width: 300px;
+    margin: 20px;
+    border-style: solid;
+    border-radius: 16px;
+    text-align: center;
+}
+.modal {
+    width: 99vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+#modal-body {
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.fechar {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+}
+.fechar h1 {
+    float: right;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+.modal img{
+    width: 300px;
+    height: 500px;
+    float: left;
+}
+#modal-body-text{
+    float: center;
+}
+#modal-body-text h1 text{
+    float: left;
+}
+nav {
+    background: #171718;
+	height: 80px;
+	width: 100%;
+}
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+nav ul li {
+    line-height: 80px;
+}
+nav ul li a {
+    color: #fff;
+    font-size: 17px;
+    padding: 17px;
+    text-transform: uppercase;
+}
+a.active, a:hover {
+    background: #5a595e;
+}
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+#modal-form {
+    margin-top: 60px;
+}
+#modal-form input {
+    width: 700px;
+}
