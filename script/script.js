@@ -103,9 +103,11 @@
 
 		btn.onclick = function()
 		{
-			envios.push(title, endereco)
+			envios.push({title, endereco})
 			console.log(envios)
 		}
-		
+
+		btn.setAttribute("id", "modal-btn")
+
 		return btn;
 	}
