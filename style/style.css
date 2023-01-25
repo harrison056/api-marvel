@@ -88,6 +88,15 @@ a.active, a:hover {
 #modal-form {
     margin-top: 60px;
 }
-#modal-form input {
+input {
     width: 700px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+#modal-form p {
+    font-weight: 900;
+}
+.pac-container {
+    z-index: 100000 !important;
 }

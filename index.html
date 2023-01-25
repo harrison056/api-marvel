@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeqeyYYDHqY8bhcwg_ILmFjB1Va2p2vvs&libraries=places&callback=initAutocomplete" async defer>
+        </script>
         <link rel="stylesheet" type="text/css" href="style/style.css"/>
     </head>
 
@@ -16,10 +19,24 @@
 
         <div class="modal">
             <div onclick="closeModal()" class="fechar"><h1>x</h1></div>
-            <div class="modal-body">
-            </div>
+            <input type="text" id="location" placeholder="Digite Cep para envio">
         </div>
+        
     </body>
-    
+    <script>
+        var autocomplete;
+        function initAutocomplete() {
+            autocomplete = new google.maps.places.Autocomplete(
+                document.getElementById('location'),
+                {
+                    types: ['postal_code'],
+                    componentRestrictions: {'country': ['BR']},
+                    fields: ['place_id', 'geometry', 'name']
+                }
+            );
+
+            autocomplete.addlistener('place_changed', onPlaceChanged);
+        }
+    </script>
 </html>
 <script src="script/script.js"></script>

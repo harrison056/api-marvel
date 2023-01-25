@@ -1,3 +1,6 @@
+	
+	var envios = []
+	
 	const timestamp = 1657976818445;
 	const apiKey = 'b0d70bbba69b0fef05a8818506d92a70';
 	const hash = '4d6e54524d79ba858029e6021adee716';
@@ -45,6 +48,8 @@
 	}
 	
 	function showModal(id){
+		var endereco = document.querySelector("#location").value;
+
 		let modal = document.querySelector('.modal')
 		modal.style.display = 'block';
 		
@@ -55,9 +60,8 @@
 		const textCreator = document.createElement('h4')
 		const textSerie = document.createElement('text')
 		const imgModal = document.createElement('img')
-		const divForm = document.createElement('div')
-		const inputCep = document.createElement('input')
-		const textForm = document.createElement('h2').appendChild(document.createTextNode("Dados de envio:"))
+
+		
 		
 		url.then((jsonParsed) => {
 			var obj = jsonParsed.data.results.find(function(_obj){
@@ -69,9 +73,6 @@
 			textTitle.textContent = obj.title
 			textSerie.textContent = 'Periodicidade - '+obj.series.name
 
-
-			divForm.appendChild(textForm)
-			divForm.appendChild(inputCep)
 			
 			divImg.appendChild(imgModal)
 			divText.appendChild(textTitle)
@@ -82,17 +83,12 @@
 			}
 			divText.appendChild(textSerie)
 			divPai.appendChild(divText)
-			divPai.appendChild(divForm)
+			divPai.appendChild(createButton(obj.title, endereco))
 			modal.appendChild(divPai)
 			divText.setAttribute("id", "modal-body-text")
 			divPai.setAttribute("id", "modal-body")
-			divForm.setAttribute("id", "modal-form")
-			inputCep.setAttribute("id", "location")
-			inputCep.setAttribute("placeholder", "Digite seu CEP")
-
-
+			
 		})
-		
 	}
 
 	function closeModal(){
@@ -102,4 +98,14 @@
 		el.parentNode.removeChild(el)
 	}
 
-	
+	function createButton(title, endereco){
+		const btn = document.createElement('button')
+
+		btn.onclick = function()
+		{
+			envios.push(title, endereco)
+			console.log(envios)
+		}
+		
+		return btn;
+	}
