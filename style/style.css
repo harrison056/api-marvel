@@ -88,7 +88,7 @@ a.active, a:hover {
 #modal-form {
     margin-top: 60px;
 }
-input {
+#location {
     width: 1200px;
     padding: 12px 20px;
     margin: 8px 0;
@@ -103,7 +103,7 @@ input {
 .pac-container {
     z-index: 100000 !important;
 }
-#modal-btn {
+.modal-btn {
     background-color: #f44336;
     border: none;
     color: white;
@@ -112,4 +112,11 @@ input {
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
+    cursor: pointer;
+}
+.div-btn {
+    margin-right: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }

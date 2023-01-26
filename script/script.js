@@ -99,7 +99,8 @@
 	}
 
 	function createButton(title, endereco){
-		const btn = document.createElement('button')
+		const divBtn = document.createElement('div')
+		const btn = document.createElement('input')
 
 		btn.onclick = function()
 		{
@@ -107,7 +108,11 @@
 			console.log(envios)
 		}
 
-		btn.setAttribute("id", "modal-btn")
+		divBtn.appendChild(btn)
+		btn.setAttribute("class", "modal-btn")
+		btn.setAttribute("type", "button")
+		btn.setAttribute("value", "Enviar")
+		divBtn.setAttribute("class", "div-btn")
 
-		return btn;
+		return divBtn;
 	}
