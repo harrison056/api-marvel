@@ -89,10 +89,13 @@ a.active, a:hover {
     margin-top: 60px;
 }
 input {
-    width: 700px;
+    width: 1200px;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+}
+.div-input {
+    margin-left: 60px;
 }
 #modal-form p {
     font-weight: 900;
