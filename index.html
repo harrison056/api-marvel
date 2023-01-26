@@ -11,7 +11,7 @@
         <nav>
             <a href="#"><img src="img/Marvel_Logo.png"style="width:50; height:80px;"></a>
             <ul>
-                <li><a href="#">Envios</a></li>
+                <li><a onclick="showModalTable()">Envios</a></li>
             </ul>
         </nav>
 
@@ -24,7 +24,18 @@
         </div>
         
         <div class="modal-table">
-            
+            <div onclick="closeModalTable()" class="fechar"><h1>x</h1></div>
+            <div id="modal-body">
+                <table>
+                    <thead>
+                        <tr>
+                          <th>Titulo</th>
+                          <th>Endereco</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
         </div>
 
     </body>

@@ -105,6 +105,8 @@
 		btn.onclick = function()
 		{
 			envios.push({title, endereco})
+			alert("Enviado!")
+			closeModal()
 			console.log(envios)
 		}
 
@@ -115,4 +117,25 @@
 		divBtn.setAttribute("class", "div-btn")
 
 		return divBtn;
+	}
+
+	function showModalTable() {
+
+		let modal = document.querySelector('.modal-table')
+		modal.style.display = 'block';
+
+		let tbody = document.getElementById('tbody')
+
+		for(let i = 0; i < envios.length; i++){
+			var tr = tbody.insertRow(i);
+			var td_title = tr.insertCell(0);
+			var td_endereco = tr.insertCell(1);
+			td_title.innerHTML = envios[i].title;
+			td_endereco.innerHTML = envios[i].endereco;
+		}
+	}
+
+	function closeModalTable(){
+		let modal = document.querySelector('.modal-table')
+		modal.style.display = 'none';
 	}
